@@ -24,7 +24,7 @@ public class InMemoryOrderRepository implements OrderRepository {
     }
 
     @Override
-    public List<Order> query(OrderQuery query) {
+    public List<Order> query(OrderQuery query) { // change name OrderQuery query -> OrderQuery orderQuery and etc.
         return storage.values().stream()
                 .filter(o -> query.orderIds() == null || query.orderIds().isEmpty() || query.orderIds().contains(o.getId()))
                 .filter(o -> query.clientIds() == null || query.clientIds().isEmpty() || query.clientIds().contains(o.getClientId()))
